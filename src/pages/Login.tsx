@@ -177,7 +177,6 @@ const Login = () => {
             </Tabs>
 
             <div className="mt-4 lg:mt-6 pt-3 lg:pt-4 border-t border-border text-center">
-              <p className="text-xs lg:text-sm text-muted-foreground">Default: admin@gmail.com / admin123</p>
             </div>
           </CardContent>
         </Card>
