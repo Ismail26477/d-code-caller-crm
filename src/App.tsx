@@ -20,7 +20,6 @@ import Callers from "./pages/Callers"
 import Settings from "./pages/Settings"
 import NotFound from "./pages/NotFound"
 import Meetings from "./pages/Meetings"
-import FollowUps from "./pages/FollowUps"
 
 const queryClient = new QueryClient()
 
@@ -70,7 +69,6 @@ const AppRoutes = () => {
       >
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/leads" element={<Leads />} />
-        <Route path="/followups" element={<FollowUps />} />
         <Route path="/pipeline" element={<Pipeline />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/meetings" element={<Meetings />} />
