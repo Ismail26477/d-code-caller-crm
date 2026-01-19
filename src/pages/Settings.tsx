@@ -75,12 +75,19 @@ const Settings = () => {
           })
         }
 
-        const integrationsData = await fetchIntegrations()
-        const integrationsMap: Record<string, any> = {}
-        integrationsData.forEach((integration: any) => {
-          integrationsMap[integration.type] = integration
-        })
-        setIntegrations(integrationsMap)
+        // Load integrations with separate error handling
+        try {
+          const integrationsData = await fetchIntegrations()
+          const integrationsMap: Record<string, any> = {}
+          integrationsData.forEach((integration: any) => {
+            integrationsMap[integration.type] = integration
+          })
+          setIntegrations(integrationsMap)
+        } catch (integrationError) {
+          console.warn("[v0] Warning: Failed to fetch integrations, continuing without them:", integrationError)
+          // Don't block the entire settings page if integrations fail
+          setIntegrations({})
+        }
       } catch (error) {
         console.error("[v0] Error loading settings:", error)
         toast({
